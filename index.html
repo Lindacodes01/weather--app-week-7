@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-    <form>
-        <input type = "search" placeholder="Enter a city" required />
-        <input type = "button" value="search" />
-<h2> Welcome to my weather App</h2>
-<h1>Nairobi</h1>
+    <div class = "weather-application">
+    <form class = "
+    search-form">
+        <input type = "search" placeholder="Enter a city" class = "search-form-input" required />
+        <input type = "button" value="search" class = "search-form-button" />
+</form>
+<div class = "Welcome">
+<h1> Welcome To My Weather App</h1>
+</div>
+<div class ="city"><h1>Nairobi</h1></div>
+<div class = "content">
 <p> Tuesday 14:30,     Rainy
     <br />
    Humidity: 66%  wind: 10km/hr
-   </p>
-   <div>🌧️ 18°C</div>
+   </p></div>
+   <div class = "temperature">🌧️ 18°C</div>
   <br /> 
+  <ul>
 <li>
     Monday
 </li>
@@ -38,11 +46,11 @@
 <li>
     Sunday
 </li>
+</ul>
         <footer> This project was coded by 
             <a href ="https://github.com/Lindacodes01" target="_blank">Floryd </a> And is open-sourced on
-            <a href = "https://github.com/Lindacodes01/hosting/watchers" target ="_blank"> github</a>And is on netlify
+            <a href = "https://github.com/Lindacodes01/hosting/watchers" target ="_blank"> github</a>And is on <a href = "https://flosweatherapp.netlify.app" target="_blank">netlify</a>
         </footer>
-    </form>
-    
+    </div>
 </body>
 </html>
