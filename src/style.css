@@ -29,6 +29,8 @@ a{
 }
 .city-details{
   padding: 20px 0;
+  font-weight: 500;
+  font-size: 25px;
 }
 .city{
   font-weight: 500;
@@ -63,5 +65,20 @@ footer{
   font-size: 14px;
   text-align: center;
   padding: 30 0 0 0;
-  color: rgba(0 0 0 0.6);
+  color: rgba(24, 23, 23, 0.6);
+}
+#time{
+  color:#5032e4;
+}
+#humidity{
+  color:#5032e4;
+}
+#wind{
+  color:#5032e4;
+}
+#speed{
+  color:#5032e4;
+}
+#percentage{
+  color:#5032e4;
 }

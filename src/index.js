@@ -7,15 +7,15 @@ let descriptionElement = document.querySelector("#description");
 let humidityElement = document.querySelector("#humidity");
 let windElement = document.querySelector("#wind");
 let wind = response.data.wind.speed;
-
-
+let timeElement = document.querySelector("#time");
+let date = new Date(response.data.time*1000);
 
 cityElement.innerHTML= response.data.city;
 cityTemperatureElement.innerHTML= Math.round(temperature);
 descriptionElement.innerHTML= response.data.condition.description;
 humidityElement.innerHTML= response.data.temperature.humidity;
 windElement.innerHTML=Math.round(wind);
-
+timeElement.innerHTML= formatDate(date);
 }
 function searchCity(city){
 //make an api call and update ui
@@ -32,3 +32,10 @@ let searchFormElement = document.querySelector("#my-form");
 searchFormElement.addEventListener("submit", changeContent);
 
 searchCity("Kampala");
+function formatDate(date){
+	let minutes = date.getMinutes();
+	let hours = date.getHours()
+	let days = ['sunday', 'monday','Tuesday','Wednesday','Thursday', 'Friday', 'Saturday']
+	let today = days[date.getDate()];
+	return `${today}, ${hours}:${minutes}`;
+}
