@@ -30,8 +30,6 @@ searchCity(searchInput.value);
 }
 let searchFormElement = document.querySelector("#my-form");
 searchFormElement.addEventListener("submit", changeContent);
-
-searchCity("Kampala");
 function formatDate(date){
 	let minutes = date.getMinutes();
 	let hours = date.getHours()
@@ -39,3 +37,27 @@ function formatDate(date){
 	let today = days[date.getDate()];
 	return `${today}, ${hours}:${minutes}`;
 }
+function displayWeather(){
+let forecastElement = document.querySelector("#forecast");
+let forecastdays = ['sunday', 'monday','Tuesday','Wednesday','Thursday', 'Friday', 'Saturday'];
+let forecastHtml = " ";
+forecastdays.forEach(function(day){
+forecastHtml = forecastHtml + `
+	 <span class="weather-forecast-day">
+        <span class="weather-forecast-date">${day}</span>
+        <span class="weather-forecast-icon">️</span>
+        <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
+            <strong>15º</strong>
+          </div>
+          <div class="weather-forecast-temperature">
+            <strong>9º</strong>
+          </div>
+        </div>
+      </span>`;
+				
+});
+forecastElement.innerHTML=forecastHtml;
+		}
+				searchCity("Kampala");
+			displayWeather();

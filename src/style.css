@@ -17,25 +17,6 @@ a{
   padding: 0 0 30 0;
   box-shadow: #a8a8d1;
 }
-.Welcome{
-  font-weight: bold;
-  color:#6b32de;
-  font-size: 23px;
-  font-weight: 400;
-}
-.application-data{
-  display:flex;
-  justify-content: space-between;
-}
-.city-details{
-  padding: 20px 0;
-  font-weight: 500;
-  font-size: 25px;
-}
-.city{
-  font-weight: 500;
-  font-size:20px;
-}
 .search-form-input {
   background-color: #eae0f9;
   border: none;
@@ -54,18 +35,26 @@ a{
   border-radius: 6px;
   
 }
-.temperature {
-  font-size: 50px;
-  display:flex;
+.Welcome{
   font-weight: bold;
-  margin-left: 30px;
+  color:#6b32de;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 25px;
 }
-footer{
-  border-top: 1px solid #a8a8d1;
-  font-size: 14px;
-  text-align: center;
-  padding: 30 0 0 0;
-  color: rgba(24, 23, 23, 0.6);
+.application-data{
+  display:flex;
+  justify-content: space-between;
+}
+.city-details{
+ padding: 10px 0;
+  font-weight: 500;
+  font-size: 25px;
+}
+.city{
+  font-weight: 500;
+  font-size:20px;
+  line-height: 10px;
 }
 #time{
   color:#5032e4;
@@ -81,4 +70,41 @@ footer{
 }
 #percentage{
   color:#5032e4;
+}
+#city-temp{
+   font-size: 50px;
+  display:flex;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.weather-forecast{
+  display :flex;
+  justify-content: space-around;
+}
+.weather-forecast-date {
+  text-align: center;
+  color: rgba(29, 5, 53, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  
+}
+
+.weather-forecast-icon {
+  font-size: 35px;
+  text-align: center;
+}
+.weather-forecast-temperatures {
+  text-align: center;
+  color: #9b2ba1;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+footer{
+  border-top: 1px solid #a8a8d1;
+  font-size: 14px;
+  text-align: center;
+  padding: 30 0 0 0;
+  color: rgba(24, 23, 23, 0.6);
 }
