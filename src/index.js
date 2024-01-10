@@ -22,6 +22,7 @@ function searchCity(city){
 let apiKey = "395ff84db8f9ao7752e401ec31at7fcd";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit{metric}`;
 axios.get(apiUrl).then(refreshWeatherData);
+displayForecast(city);
 }
 function changeContent(event){
 event.preventDefault();
@@ -34,30 +35,45 @@ function formatDate(date){
 	let minutes = date.getMinutes();
 	let hours = date.getHours()
 	let days = ['sunday', 'monday','Tuesday','Wednesday','Thursday', 'Friday', 'Saturday']
-	let today = days[date.getDate()];
+	let today = days[date.getDay()];
 	return `${today}, ${hours}:${minutes}`;
 }
-function displayWeather(){
+function dayToday(timestamp){
+  let date = new Date(timestamp*1000);
+  let days = ['sun', 'mon','Tue','Wed','Thu', 'Fri', 'Sat']
+
+  return days[date.getDay()];
+}
+function displayForecast(city){
+let apiKey = "395ff84db8f9ao7752e401ec31at7fcd";
+let apiUrl =`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit{metric}`;
+axios(apiUrl).then(displayWeather);
+}
+function displayWeather(response){
+
+  console.log(response.data); 
 let forecastElement = document.querySelector("#forecast");
-let forecastdays = ['sunday', 'monday','Tuesday','Wednesday','Thursday', 'Friday', 'Saturday'];
-let forecastHtml = " ";
-forecastdays.forEach(function(day){
+let forecastHtml = " "; 
+response.data.daily.forEach(function(day, index){
+  if (index < 5){
 forecastHtml = forecastHtml + `
 	 <span class="weather-forecast-day">
-        <span class="weather-forecast-date">${day}</span>
-        <span class="weather-forecast-icon">️</span>
+        <span class="weather-forecast-date">${dayToday(day.time)}</span>
+        <span class="weather-forecast-icon">️<img src ="${day.condition.icon_url}" /></span>
         <div class="weather-forecast-temperatures">
           <div class="weather-forecast-temperature">
-            <strong>15º</strong>
+            <strong>${Math.round(day.temperature.maximum)}°</strong>
           </div>
           <div class="weather-forecast-temperature">
-            <strong>9º</strong>
+            <strong>${Math.round(day.temperature.minimum)}°</strong>
           </div>
         </div>
       </span>`;
+  }
 				
 });
 forecastElement.innerHTML=forecastHtml;
 		}
-				searchCity("Kampala");
-			displayWeather();
+				searchCity("lisbon");
+			
+			

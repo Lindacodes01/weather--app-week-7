@@ -83,21 +83,25 @@ a{
 }
 .weather-forecast-date {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
   color: rgba(29, 5, 53, 0.4);
   font-size: 16px;
-  line-height: 20px;
+  line-height: 10px;
   margin-bottom: 10px;
   
 }
 
 .weather-forecast-icon {
-  font-size: 35px;
+  font-size: 28px;
   text-align: center;
+  display: block;
+   margin: 0 auto;
 }
 .weather-forecast-temperatures {
   text-align: center;
   color: #9b2ba1;
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   justify-content: space-around;
 }
