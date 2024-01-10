@@ -77,6 +77,9 @@ a{
   font-weight: bold;
   margin-top: 30px;
 }
+#icon{
+  width: 28px;
+}
 .weather-forecast{
   display :flex;
   justify-content: space-around;
@@ -85,9 +88,8 @@ a{
   text-align: center;
   display: flex;
   justify-content: space-around;
-  color: rgba(29, 5, 53, 0.4);
+  color: rgba(19, 7, 30, 0.4);
   font-size: 16px;
-  line-height: 10px;
   margin-bottom: 10px;
   
 }
